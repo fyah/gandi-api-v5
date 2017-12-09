@@ -1,4 +1,4 @@
-import requests, json, re
+import requests, json
 
 class gandi_api_v5(object):
 
