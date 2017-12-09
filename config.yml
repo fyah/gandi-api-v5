@@ -1,0 +1,27 @@
+#the api endpoint url
+api_url: 'https://dns.api.gandi.net/api/v5'
+
+#the secret api key
+api_key: 'xyz'
+
+#the list of records you want to update to your public IP
+#format is:
+#   zone name (domain) => list of records names
+records_to_update: {
+    'example.com': ['@',] ,
+}
+
+#the list of public ip resolvers
+#they will be used in that order, if a failure occurs, will move to the
+#one in the list
+ip_services: [
+    'https://ifconfig.co',
+    'http://ifconfig.me/ip',
+    'http://whatismyip.akamai.com/',
+    'http://ipinfo.io/ip' ,
+]
+
+#this flags enables verbosity, otherwise, it is just doing updates silently
+#note that, when debug is on, after updating a record, we re interogate
+#the record to verify that the update was done successfully
+debug: true
